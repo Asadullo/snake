@@ -61,7 +61,7 @@ namespace Snake.Controllers
                         JsonSerializer.Serialize(_gameService.StartNewGame(fullGame.State.Width, fullGame.State.Height), new JsonSerializerOptions { WriteIndented = true })
                     }
                  );
-                else if (result == -2) return new GameOverResponse(
+                else if (result == -2 || result == -3) return new GameOverResponse(
                     new
                     {
                         message = fullGame.State.Score                        
